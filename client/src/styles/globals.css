@@ -1,6 +1,6 @@
-@import "tailwindcss";
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;800;900&family=Space+Grotesk:wght@400;500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap");
+@import "tailwindcss";
 
 /* ---------------------------------------------------------
    TAILWIND v4 THEME CONFIGURATION
@@ -74,6 +74,15 @@
   --spacing-lg: 32px;
   --spacing-xl: 64px;
   --spacing-container-margin: 40px;
+
+  /* MAX-WIDTHS (for containers & layout bounds)👆so Tailwind stops falling back to spacing */
+  --max-width-xs: 20rem; /* 320px */
+  --max-width-sm: 24rem; /* 384px */
+  --max-width-md: 28rem; /* 448px */
+  --max-width-lg: 32rem; /* 512px */
+  --max-width-xl: 36rem; /* 576px */
+  --max-width-2xl: 42rem; /* 672px */
+  --max-width-7xl: 80rem; /* 1280px */
 
   /* SHAPES */
   --radius-default: 0.25rem;
@@ -171,6 +180,11 @@
 
   /* INTERACTIVE STATES */
   .active-btn {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 1);
+  }
+
+  .active-press:active {
     transform: translate(2px, 2px);
     box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 1);
   }
