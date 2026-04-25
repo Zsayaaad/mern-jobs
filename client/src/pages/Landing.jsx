@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom";
+import Navbar from "../components/Navbar";
 
 const Landing = () => {
   return (
     <div className="bg-background text-on-background font-body min-h-screen">
       {/* TopNavBar */}
-      <nav className="sticky top-0 z-50 flex justify-between items-center px-8 py-4 w-full bg-white dark:bg-zinc-900 border-b-4 border-black dark:border-white">
+      {/* <nav className="sticky top-0 z-50 flex justify-between items-center px-8 py-4 w-full bg-white dark:bg-zinc-900 border-b-4 border-black dark:border-white">
         <div className="text-3xl font-black italic tracking-tighter text-black dark:text-white uppercase">
           JOBIFY
         </div>
@@ -34,17 +35,19 @@ const Landing = () => {
               dark_mode
             </span>
           </button>
-          <button className="p-2 hover:bg-zinc-100 transition-colors">
-            <span
-              className="material-symbols-outlined"
-              data-icon="account_circle"
-            >
-              account_circle
-            </span>
-          </button>
+          <Link to="/login">
+            <button className="p-2 hover:bg-zinc-100 transition-colors">
+              <span
+                className="material-symbols-outlined"
+                data-icon="account_circle"
+              >
+                account_circle
+              </span>
+            </button>
+          </Link>
         </div>
-      </nav>
-
+      </nav> */}
+      <Navbar />
       <main className="max-w-[1440px] mx-auto px-container-margin py-xl">
         {/* Hero Section */}
         <section className="grid grid-cols-12 gap-gutter mb-xl items-center">
