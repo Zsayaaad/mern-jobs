@@ -8,9 +8,11 @@ const Login = () => {
     <div className="min-h-screen flex flex-col items-center justify-center bg-background text-on-background p-gutter">
       {/* Fixed Header */}
       <header className="fixed top-0 z-50 flex justify-between items-center px-8 py-4 w-full bg-white border-b-4 border-black">
-        <div className="text-3xl font-black italic tracking-tighter text-black font-heading">
-          JOBIFY
-        </div>
+        <Link to="/">
+          <div className="text-3xl font-black italic tracking-tighter text-black font-heading">
+            JOBIFY
+          </div>
+        </Link>
         <div className="flex items-center gap-md">
           <span className="material-symbols-outlined text-black cursor-pointer hover:bg-zinc-100 p-2 transition-colors">
             dark_mode
@@ -47,7 +49,7 @@ const Login = () => {
               type="email"
               name="email"
               labelText="Email Address"
-              placeholder="name@company.com"
+              placeholder="USER@JOBIFY.COM"
               dataIcon="mail"
             />
 
