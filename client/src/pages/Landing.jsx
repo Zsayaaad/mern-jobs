@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import Navbar from "../components/Navbar";
+import { Navbar } from "../components";
 
 const Landing = () => {
   return (
@@ -129,11 +129,11 @@ const Landing = () => {
         {/* Benefits Section */}
         <section className="py-xl">
           <div className="flex items-center gap-md mb-xl">
-            <div className="h-1 bg-black flex-grow"></div>
+            <div className="h-1 bg-black grow"></div>
             <h2 className="font-h2 text-h2 uppercase shrink-0">
               CORE CAPABILITIES
             </h2>
-            <div className="h-1 bg-black flex-grow"></div>
+            <div className="h-1 bg-black grow"></div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-gutter">
             {/* Benefit 1: Track */}
@@ -227,7 +227,7 @@ const Landing = () => {
             </p>
           </div>
           <div className="col-span-12 md:col-span-8 bg-primary-container p-lg brutalist-shadow-lg border-4 border-black flex flex-col md:flex-row items-center gap-lg">
-            <div className="flex-grow">
+            <div className="grow">
               <h2 className="font-h2 text-h2 mb-sm uppercase">
                 READY TO EXECUTE?
               </h2>

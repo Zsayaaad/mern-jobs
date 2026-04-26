@@ -8,9 +8,11 @@ const Error = () => {
         {/* TopNavBar - Rendered per JSON instruction */}
         <header className="sticky top-0 z-50 flex justify-between items-center px-8 py-4 w-full bg-white dark:bg-zinc-900 border-b-4 border-black dark:border-white">
           <div className="flex items-center gap-8">
-            <span className="text-3xl font-black italic tracking-tighter text-black dark:text-white">
-              JOBIFY
-            </span>
+            <Link to="/">
+              <span className="text-3xl font-black italic tracking-tighter text-black dark:text-white">
+                JOBIFY
+              </span>
+            </Link>
           </div>
           <div className="flex items-center gap-6">
             <button className="p-2 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors">
