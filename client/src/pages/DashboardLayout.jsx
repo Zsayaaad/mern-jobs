@@ -2,6 +2,8 @@ import { Link, Outlet } from "react-router-dom";
 import { Sidebar } from "../components";
 import { useState } from "react";
 import { DashboardContext } from "../context/DashboardContext";
+import LogoutContainer from "../components/LogoutContainer";
+import ThemeToggle from "../components/ThemeToggle";
 
 const DashboardLayout = () => {
   // temp user
@@ -20,6 +22,13 @@ const DashboardLayout = () => {
     }
   };
 
+  //  on tablet and mobile only => when i press on any NavLinks the sidebar closed automatically
+  const closeMobileSidebar = () => {
+    if (window.innerWidth < 1024) {
+      setIsMobileSidebarOpen(false);
+    }
+  };
+
   const logoutUser = async () => {
     console.log("logout user");
   };
@@ -31,6 +40,7 @@ const DashboardLayout = () => {
         isMobileSidebarOpen,
         isSidebarCollapsed,
         toggleSidebar,
+        closeMobileSidebar,
         logoutUser,
       }}
     >
@@ -40,9 +50,6 @@ const DashboardLayout = () => {
           className={`fixed inset-0 bg-black/50 z-40 lg:hidden ${isMobileSidebarOpen ? "block" : "hidden"}`}
           onClick={() => setIsMobileSidebarOpen(false)}
         />
-
-        {/* SideNavBar Shell */}
-        <Sidebar />
 
         {/* TopNavBar Shell */}
         <header
@@ -66,38 +73,23 @@ const DashboardLayout = () => {
           </div>
 
           <div className="flex items-center gap-2 lg:gap-6">
-            {/* <div className="hidden md:flex items-center gap-4 lg:gap-8 font-mono-label text-sm uppercase font-bold">
-              <a
-                href="/overview"
-                className="text-on-surface underline decoration-4 underline-offset-4"
-              >
-                Overview
-              </a>
-              <a
-                href="/reports"
-                className="text-secondary hover:text-on-surface transition-colors"
-              >
-                Reports
-              </a>
-              <a
-                href="/integrations"
-                className="text-secondary hover:text-on-surface transition-colors"
-              >
-                Integrations
-              </a>
-            </div> */}
             <div className="flex items-center gap-1 lg:gap-4">
-              <button className="p-2 hover:bg-surface-container transition-colors active:translate-y-0.5">
+              {/* <button className="p-2 hover:bg-surface-container transition-colors active:translate-y-0.5">
                 <span className="material-symbols-outlined">dark_mode</span>
-              </button>
-              <button className="p-2 hover:bg-surface-container transition-colors active:translate-y-0.5">
-                <span className="material-symbols-outlined">
+              </button> */}
+              <ThemeToggle />
+              {/* <button className="p-2 hover:bg-surface-container transition-colors active:translate-y-0.5"> */}
+              {/* <span className="material-symbols-outlined">
                   account_circle
-                </span>
-              </button>
+                </span> */}
+              <LogoutContainer />
+              {/* </button> */}
             </div>
           </div>
         </header>
+
+        {/* SideNavBar Shell */}
+        <Sidebar />
 
         <div
           className={`transition-all duration-300 ease-in-out ${isSidebarCollapsed ? "lg:ml-20" : "lg:ml-72"}`}

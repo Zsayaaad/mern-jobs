@@ -3,7 +3,7 @@ import { useDashboardContext } from "../context/DashboardContext";
 import links from "../utils/links";
 
 const NavLinks = () => {
-  const { isSidebarCollapsed } = useDashboardContext();
+  const { isSidebarCollapsed, closeMobileSidebar } = useDashboardContext();
 
   return (
     <nav className="grow px-3 py-4 flex flex-col gap-2 overflow-y-auto overflow-x-hidden">
@@ -13,14 +13,18 @@ const NavLinks = () => {
           <NavLink
             to={path}
             key={text}
-            end
+            onClick={closeMobileSidebar}
             className={({ isActive }) =>
+              /**isActive is provided by React Router's <NavLink> component.
+               * It's a boolean that React Router automatically calculates by comparing the link's to prop against the current URL path.
+               */
               `flex items-center gap-4 px-4 py-4 font-mono-label uppercase font-bold ${
                 isActive
                   ? " bg-primary-container text-on-surface border-2 border-on-surface brutalist-shadow  transition-all active:scale-95 "
                   : " text-on-surface hover:bg-surface-container hover:translate-x-1 transition-transform "
               }`
             }
+            end // to make index element of the parent inactive when make another element active instead of the index
           >
             <span className="material-symbols-outlined shrink-0">{icon}</span>
             <span className={isSidebarCollapsed ? "lg:hidden" : "block"}>
@@ -29,53 +33,6 @@ const NavLinks = () => {
           </NavLink>
         );
       })}
-
-      {/* Active Link */}
-      {/* <a
-        href="/dashboard"
-        className="flex items-center gap-4 px-4 py-4 bg-primary-container text-on-surface border-2 border-on-surface brutalist-shadow font-mono-label uppercase font-bold transition-all active:scale-95 group"
-      >
-        <span className="material-symbols-outlined shrink-0">upload</span>
-        <span className={isSidebarCollapsed ? "lg:hidden" : "block"}>
-          Add Job
-        </span>
-      </a> */}
-
-      {/* Inactive Links */}
-      {/* <a
-        href="/dashboard/allJobs"
-        className="flex items-center gap-4 px-4 py-4 text-on-surface hover:bg-surface-container font-mono-label uppercase font-bold hover:translate-x-1 transition-transform group"
-      >
-        <span className="material-symbols-outlined shrink-0">work</span>
-        <span className={isSidebarCollapsed ? "lg:hidden" : "block"}>Jobs</span>
-      </a>
-      <a
-        href="/candidates"
-        className="flex items-center gap-4 px-4 py-4 text-on-surface hover:bg-surface-container font-mono-label uppercase font-bold hover:translate-x-1 transition-transform group"
-      >
-        <span className="material-symbols-outlined shrink-0">group</span>
-        <span className={isSidebarCollapsed ? "lg:hidden" : "block"}>
-          Candidates
-        </span>
-      </a>
-      <a
-        href="/analytics"
-        className="flex items-center gap-4 px-4 py-4 text-on-surface hover:bg-surface-container font-mono-label uppercase font-bold hover:translate-x-1 transition-transform group"
-      >
-        <span className="material-symbols-outlined shrink-0">leaderboard</span>
-        <span className={isSidebarCollapsed ? "lg:hidden" : "block"}>
-          Analytics
-        </span>
-      </a>
-      <a
-        href="/settings"
-        className="flex items-center gap-4 px-4 py-4 text-on-surface hover:bg-surface-container font-mono-label uppercase font-bold hover:translate-x-1 transition-transform group"
-      >
-        <span className="material-symbols-outlined shrink-0">settings</span>
-        <span className={isSidebarCollapsed ? "lg:hidden" : "block"}>
-          Settings
-        </span>
-      </a> */}
     </nav>
   );
 };
