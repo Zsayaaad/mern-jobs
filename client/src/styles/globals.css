@@ -5,6 +5,8 @@
 /* ---------------------------------------------------------
    TAILWIND v4 THEME CONFIGURATION
    --------------------------------------------------------- */
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
   /* BRAND COLORS */
   --color-surface: #f9f9f9;
@@ -194,9 +196,28 @@
   }
 }
 
+@layer components {
+  .benefit-card {
+    @apply bg-white border-4 border-black p-lg transition-colors hover:bg-surface-container-low;
+    box-shadow: 4px 4px 0px 0px rgba(0, 0, 0, 1);
+  }
+
+  .benefit-card-icon {
+    @apply mb-lg flex h-16 w-16 items-center justify-center border-2 border-black bg-black text-primary-container transition-colors group-hover:bg-primary-container group-hover:text-black;
+  }
+
+  .benefit-card-footer {
+    @apply flex items-center gap-2 border-t-2 border-black pt-md font-bold uppercase;
+    font-family: var(--font-mono);
+    font-size: 14px;
+    line-height: 1.4;
+    letter-spacing: 0.05em;
+  }
+}
+
 /* ---------------------------------------------------------
-   UTILITIES LAYER (Custom Components)
-   --------------------------------------------------------- */
+    UTILITIES LAYER (Custom Components)
+    --------------------------------------------------------- */
 @layer utilities {
   /* BRUTALIST SHADOWS */
   .brutalist-shadow {

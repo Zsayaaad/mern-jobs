@@ -1,53 +1,12 @@
 import { Link } from "react-router-dom";
-import { Navbar } from "../components";
+import { BenefitsSection, FeaturesSection, Navbar } from "../components";
 
 const Landing = () => {
   return (
     <div className="bg-background text-on-background font-body min-h-screen">
       {/* TopNavBar */}
-      {/* <nav className="sticky top-0 z-50 flex justify-between items-center px-8 py-4 w-full bg-white dark:bg-zinc-900 border-b-4 border-black dark:border-white">
-        <div className="text-3xl font-black italic tracking-tighter text-black dark:text-white uppercase">
-          JOBIFY
-        </div>
-        <div className="hidden md:flex gap-8 items-center">
-          <a
-            className="font-mono-label text-mono-label text-black dark:text-white underline decoration-4 underline-offset-4 uppercase"
-            href="#"
-          >
-            Home
-          </a>
-          <a
-            className="font-mono-label text-mono-label text-zinc-600 dark:text-zinc-400 hover:text-black transition-colors uppercase"
-            href="#"
-          >
-            Features
-          </a>
-          <a
-            className="font-mono-label text-mono-label text-zinc-600 dark:text-zinc-400 hover:text-black transition-colors uppercase"
-            href="#"
-          >
-            Careers
-          </a>
-        </div>
-        <div className="flex items-center gap-4">
-          <button className="p-2 hover:bg-zinc-100 transition-colors">
-            <span className="material-symbols-outlined" data-icon="dark_mode">
-              dark_mode
-            </span>
-          </button>
-          <Link to="/login">
-            <button className="p-2 hover:bg-zinc-100 transition-colors">
-              <span
-                className="material-symbols-outlined"
-                data-icon="account_circle"
-              >
-                account_circle
-              </span>
-            </button>
-          </Link>
-        </div>
-      </nav> */}
       <Navbar />
+
       <main className="max-w-[1440px] mx-auto px-container-margin py-xl">
         {/* Hero Section */}
         <section className="grid grid-cols-12 gap-gutter mb-xl items-center">
@@ -126,93 +85,7 @@ const Landing = () => {
           </div>
         </section>
 
-        {/* Benefits Section */}
-        <section className="py-xl">
-          <div className="flex items-center gap-md mb-xl">
-            <div className="h-1 bg-black grow"></div>
-            <h2 className="font-h2 text-h2 uppercase shrink-0">
-              CORE CAPABILITIES
-            </h2>
-            <div className="h-1 bg-black grow"></div>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-gutter">
-            {/* Benefit 1: Track */}
-            <div className="bg-white border-4 border-black p-lg brutalist-shadow hover:bg-surface-container-low transition-colors group">
-              <div className="w-16 h-16 bg-black text-primary-container flex items-center justify-center mb-lg border-2 border-black group-hover:bg-primary-container group-hover:text-black transition-colors">
-                <span
-                  className="material-symbols-outlined text-4xl"
-                  data-icon="location_searching"
-                >
-                  location_searching
-                </span>
-              </div>
-              <h3 className="font-h3 text-h3 mb-md uppercase font-black">
-                TRACK
-              </h3>
-              <p className="font-body text-body mb-lg">
-                Zero-friction application tracking. Every application, every
-                stage, every interaction logged in a high-speed database
-                designed for volume.
-              </p>
-              <div className="flex items-center gap-2 font-mono-label text-mono-label font-bold border-t-2 border-black pt-md uppercase">
-                Real-time logging{" "}
-                <span className="material-symbols-outlined">bolt</span>
-              </div>
-            </div>
-
-            {/* Benefit 2: Analyze */}
-            <div className="bg-white border-4 border-black p-lg brutalist-shadow hover:bg-surface-container-low transition-colors group">
-              <div className="w-16 h-16 bg-black text-primary-container flex items-center justify-center mb-lg border-2 border-black group-hover:bg-primary-container group-hover:text-black transition-colors">
-                <span
-                  className="material-symbols-outlined text-4xl"
-                  data-icon="leaderboard"
-                >
-                  leaderboard
-                </span>
-              </div>
-              <h3 className="font-h3 text-h3 mb-md uppercase font-black">
-                ANALYZE
-              </h3>
-              <p className="font-body text-body mb-lg">
-                Turn your search into data. Conversion rates, response
-                timelines, and salary benchmarks visualized through a brutalist
-                analytics dashboard.
-              </p>
-              <div className="flex items-center gap-2 font-mono-label text-mono-label font-bold border-t-2 border-black pt-md uppercase">
-                Deep metrics{" "}
-                <span className="material-symbols-outlined">
-                  data_exploration
-                </span>
-              </div>
-            </div>
-
-            {/* Benefit 3: Manage */}
-            <div className="bg-white border-4 border-black p-lg brutalist-shadow hover:bg-surface-container-low transition-colors group">
-              <div className="w-16 h-16 bg-black text-primary-container flex items-center justify-center mb-lg border-2 border-black group-hover:bg-primary-container group-hover:text-black transition-colors">
-                <span
-                  className="material-symbols-outlined text-4xl"
-                  data-icon="grid_view"
-                >
-                  grid_view
-                </span>
-              </div>
-              <h3 className="font-h3 text-h3 mb-md uppercase font-black">
-                MANAGE
-              </h3>
-              <p className="font-body text-body mb-lg">
-                Organize your pipeline with surgical precision. Drag-and-drop
-                interfaces that feel like a high-performance OS, not a
-                spreadsheet.
-              </p>
-              <div className="flex items-center gap-2 font-mono-label text-mono-label font-bold border-t-2 border-black pt-md uppercase">
-                Workflow control{" "}
-                <span className="material-symbols-outlined">
-                  settings_input_component
-                </span>
-              </div>
-            </div>
-          </div>
-        </section>
+        <BenefitsSection />
 
         {/* Dynamic Content Section / Social Proof */}
         <section className="mt-xl grid grid-cols-12 gap-gutter">
@@ -244,48 +117,7 @@ const Landing = () => {
         </section>
 
         {/* Feature Grid (Modern Brutalism) */}
-        <section className="py-xl grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
-          <div className="p-md border-2 border-black bg-white flex flex-col gap-sm">
-            <span
-              className="material-symbols-outlined text-primary"
-              data-icon="encrypted"
-            >
-              encrypted
-            </span>
-            <h4 className="font-h3 text-body font-black uppercase">
-              Secure data
-            </h4>
-          </div>
-          <div className="p-md border-2 border-black bg-white flex flex-col gap-sm">
-            <span
-              className="material-symbols-outlined text-primary"
-              data-icon="cloud_sync"
-            >
-              cloud_sync
-            </span>
-            <h4 className="font-h3 text-body font-black uppercase">
-              Live Sync
-            </h4>
-          </div>
-          <div className="p-md border-2 border-black bg-white flex flex-col gap-sm">
-            <span
-              className="material-symbols-outlined text-primary"
-              data-icon="api"
-            >
-              api
-            </span>
-            <h4 className="font-h3 text-body font-black uppercase">Open API</h4>
-          </div>
-          <div className="p-md border-2 border-black bg-white flex flex-col gap-sm">
-            <span
-              className="material-symbols-outlined text-primary"
-              data-icon="mail"
-            >
-              mail
-            </span>
-            <h4 className="font-h3 text-body font-black uppercase">Alerts</h4>
-          </div>
-        </section>
+        <FeaturesSection />
       </main>
 
       {/* Footer */}

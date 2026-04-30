@@ -44,7 +44,7 @@ const DashboardLayout = () => {
         logoutUser,
       }}
     >
-      <div className="bg-background font-body text-on-background min-h-screen">
+      <div className="bg-background dark:bg-gray-900 font-body text-on-background min-h-screen">
         {/* Mobile Overlay */}
         <div
           className={`fixed inset-0 bg-black/50 z-40 lg:hidden ${isMobileSidebarOpen ? "block" : "hidden"}`}
