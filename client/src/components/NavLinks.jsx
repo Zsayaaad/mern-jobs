@@ -20,7 +20,7 @@ const NavLinks = () => {
                */
               `flex items-center gap-4 px-4 py-4 font-mono-label uppercase font-bold ${
                 isActive
-                  ? " bg-primary-container text-on-surface border-2 border-on-surface brutalist-shadow  transition-all active:scale-95 "
+                  ? " bg-primary-container text-black border-2 border-on-surface shadow-[4px_4px_0px_0px_white] transition-all active:scale-95 "
                   : " text-on-surface hover:bg-surface-container hover:translate-x-1 transition-transform "
               }`
             }

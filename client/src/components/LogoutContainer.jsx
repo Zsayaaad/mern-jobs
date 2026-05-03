@@ -9,8 +9,8 @@ const LogoutContainer = () => {
     <div className="relative">
       <button
         type="button"
-        className={`cursor-pointer flex items-center gap-2 p-2 border-2 border-on-surface bg-surface-container-lowest brutalist-active brutalist-shadow-sm transition-all hover:bg-surface-container ${
-          showLogout ? "translate-x-[2px] translate-y-[2px] shadow-none" : ""
+        className={`cursor-pointer flex items-center gap-2 p-2 border-2 border-on-surface bg-surface-container-lowest brutalist-active transition-all hover:bg-surface-container ${
+          showLogout ? "translate-x-[2px] translate-y-[2px]" : ""
         }`}
         onClick={() => setShowLogout(!showLogout)}
       >
@@ -28,7 +28,7 @@ const LogoutContainer = () => {
 
       {/* Dropdown Menu */}
       <div
-        className={`absolute right-0 top-full mt-2 min-w-[160px] bg-surface-container-lowest border-4 border-on-surface brutalist-shadow-lg z-50 transition-all duration-200 origin-top-right ${
+        className={`absolute right-0 top-full mt-2 min-w-[160px] bg-surface-container-lowest border-4 border-on-surface z-50 transition-all duration-200 origin-top-right ${
           showLogout
             ? "opacity-100 scale-100 visible"
             : "opacity-0 scale-95 invisible"

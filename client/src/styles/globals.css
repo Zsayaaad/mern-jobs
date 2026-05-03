@@ -194,16 +194,81 @@
   body {
     @apply bg-surface text-on-surface font-heading antialiased selection:bg-primary-container selection:text-on-surface;
   }
+
+  /* -------------------------------------------------------
+     DARK MODE — Brutalist Palette
+     Canvas: pure black | Accent: neon green | Borders: white
+     ------------------------------------------------------- */
+  .dark {
+    /* BACKGROUNDS */
+    --color-background: #000000; /* Pure Black canvas */
+    --color-on-background: #ffffff;
+    --color-surface: #000000;
+    --color-surface-dim: #000000;
+    --color-surface-bright: #1a1a1a;
+
+    /* SURFACE CONTAINERS — dark grey depth layers */
+    --color-surface-container-lowest: #090909;
+    --color-surface-container-low: #121212;
+    --color-surface-container: #1a1a1a;
+    --color-surface-container-high: #222222;
+    --color-surface-container-highest: #2a2a2a;
+
+    /* TEXT */
+    --color-on-surface: #ffffff; /* Primary text */
+    --color-on-surface-variant: #a1a1aa; /* Zinc-400 — muted/secondary */
+
+    /* INVERSE */
+    --color-inverse-surface: #ffffff;
+    --color-inverse-on-surface: #000000;
+    --color-surface-variant: #1a1a1a;
+
+    /* BORDERS / OUTLINES — white replaces black from light mode */
+    --color-outline: #ffffff;
+    --color-outline-variant: #3f3f46; /* Zinc-700 subtle dividers */
+
+    /* PRIMARY ACCENT — Neon Green */
+    --color-primary: #00ff41;
+    --color-on-primary: #000000; /* Black text on neon buttons */
+    --color-primary-container: #00ff41;
+    --color-on-primary-container: #000000;
+    --color-inverse-primary: #006e16;
+    --color-primary-fixed: #00ff41;
+    --color-primary-fixed-dim: #00cc33;
+    --color-on-primary-fixed: #000000;
+    --color-on-primary-fixed-variant: #000000;
+
+    /* SECONDARY */
+    --color-secondary: #a1a1aa; /* Zinc-400 */
+    --color-on-secondary: #000000;
+    --color-secondary-container: #27272a; /* Zinc-800 */
+    --color-on-secondary-container: #ffffff;
+
+    /* ERROR */
+    --color-error: #ff3131; /* Neon Red */
+    --color-on-error: #000000;
+    --color-error-container: #3b0000;
+    --color-on-error-container: #ff3131;
+  }
 }
 
 @layer components {
   .benefit-card {
-    @apply bg-white border-4 border-black p-lg transition-colors hover:bg-surface-container-low;
+    @apply bg-white text-black border-4 border-black p-lg transition-colors hover:bg-surface-container-low;
     box-shadow: 4px 4px 0px 0px rgba(0, 0, 0, 1);
+  }
+
+  :where(.dark, .dark *) .benefit-card {
+    @apply bg-surface-container-low text-on-background border-white hover:bg-surface-container;
+    box-shadow: 4px 4px 0px 0px #ffffff;
   }
 
   .benefit-card-icon {
     @apply mb-lg flex h-16 w-16 items-center justify-center border-2 border-black bg-black text-primary-container transition-colors group-hover:bg-primary-container group-hover:text-black;
+  }
+
+  :where(.dark, .dark *) .benefit-card-icon {
+    @apply border-white bg-primary-container text-black group-hover:bg-white group-hover:text-black;
   }
 
   .benefit-card-footer {
@@ -212,6 +277,10 @@
     font-size: 14px;
     line-height: 1.4;
     letter-spacing: 0.05em;
+  }
+
+  :where(.dark, .dark *) .benefit-card-footer {
+    @apply border-white text-secondary;
   }
 }
 
@@ -236,8 +305,25 @@
     box-shadow: 8px 8px 0px 0px var(--color-primary-container);
   }
 
+  /* DARK MODE: neon green shadows for the brutalist "pop" effect */
+  :where(.dark, .dark *) .brutalist-shadow {
+    box-shadow: 4px 4px 0px 0px #ffffff;
+  }
+
+  :where(.dark, .dark *) .brutalist-shadow-lg {
+    box-shadow: 8px 8px 0px 0px #ffffff;
+  }
+
+  :where(.dark, .dark *) .brutalist-shadow-sm {
+    box-shadow: 4px 4px 0px 0px #ffffff;
+  }
+
   .brutalist-hover {
     @apply hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)];
+  }
+
+  :where(.dark, .dark *) .brutalist-hover {
+    @apply hover:shadow-[6px_6px_0px_0px_#ffffff];
   }
 
   .brutalist-active {
@@ -255,9 +341,17 @@
     box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 1);
   }
 
+  :where(.dark, .dark *) .active-btn {
+    box-shadow: 2px 2px 0px 0px #ffffff;
+  }
+
   .active-press:active {
     transform: translate(2px, 2px);
     box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 1);
+  }
+
+  :where(.dark, .dark *) .active-press:active {
+    box-shadow: 2px 2px 0px 0px #ffffff;
   }
 
   /* ICONOGRAPHY DEFAULTS */

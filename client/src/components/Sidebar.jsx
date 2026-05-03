@@ -34,7 +34,7 @@ const Sidebar = () => {
 
       <div className="p-3 mt-auto border-t-4 border-on-surface bg-surface">
         <button
-          className={`w-full bg-on-surface text-surface-container-lowest py-4 border-2 border-on-surface brutalist-shadow font-mono-label uppercase font-bold mb-4 flex items-center justify-center gap-2 transition-all brutalist-hover brutalist-active`}
+          className={`w-full bg-black text-white dark:bg-primary dark:text-black py-4 border-2 border-on-surface shadow-[4px_4px_0px_0px_white] font-mono-label uppercase font-bold mb-4 flex items-center justify-center gap-2 transition-all brutalist-hover brutalist-active`}
         >
           <span className="material-symbols-outlined">add</span>
           <span className={isSidebarCollapsed ? "lg:hidden" : "block"}>

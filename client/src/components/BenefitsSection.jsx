@@ -29,11 +29,11 @@ const BenefitsSection = () => {
   return (
     <section className="py-xl">
       <div className="flex items-center gap-md mb-xl">
-        <div className="h-1 bg-black grow"></div>
+        <div className="h-1 bg-on-background grow"></div>
         <h2 className="font-h2 text-h2 uppercase shrink-0">
           CORE CAPABILITIES
         </h2>
-        <div className="h-1 bg-black grow"></div>
+        <div className="h-1 bg-on-background grow"></div>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-gutter">

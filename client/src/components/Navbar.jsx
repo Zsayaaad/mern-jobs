@@ -1,3 +1,5 @@
+import ThemeToggle from "./ThemeToggle";
+
 const Navbar = () => {
   return (
     <nav className="bg-surface-container-lowest border-b-4 border-on-background brutalist-shadow w-full sticky top-0 z-50 flex justify-between items-center px-8 h-20 mx-auto">
@@ -22,7 +24,7 @@ const Navbar = () => {
         {/* Inactive Link */}
         <a
           href="/dashboard/allJobs"
-          className="text-secondary px-2 py-1 border-2 border-transparent  hover:bg-primary-container hover:text-on-background hover:border-on-background hover:shadow-[2px_2px_0px_0px_#1a1c1c] hover:cursor-crosshair"
+          className="text-secondary px-2 py-1 border-2 border-transparent  hover:bg-primary-container hover:text-black hover:border-on-background hover:shadow-[2px_2px_0px_0px_#1a1c1c] dark:hover:shadow-[2px_2px_0px_0px_#ffffff] hover:cursor-crosshair"
         >
           Find Jobs
         </a>
@@ -30,7 +32,7 @@ const Navbar = () => {
         {/* Inactive Link (Includes interactive hover state mapped from your showcase) */}
         <a
           href="/dashboard"
-          className="text-secondary px-2 py-1 border-2 border-transparent  hover:bg-primary-container hover:text-on-background hover:border-on-background hover:shadow-[2px_2px_0px_0px_#1a1c1c] hover:cursor-crosshair"
+          className="text-secondary px-2 py-1 border-2 border-transparent  hover:bg-primary-container hover:text-black hover:border-on-background hover:shadow-[2px_2px_0px_0px_#1a1c1c] dark:hover:shadow-[2px_2px_0px_0px_#ffffff] hover:cursor-crosshair"
         >
           Post a Job
         </a>
@@ -39,9 +41,10 @@ const Navbar = () => {
       {/* Actions */}
       <div className="flex items-center gap-md">
         {/* Secondary Action */}
+        <ThemeToggle />
         <a
           href="/login"
-          className="hidden md:block font-mono-label text-mono-label font-bold uppercase text-on-background px-4 py-2 border-2 border-transparent transition-all duration-200 ease-in-out hover:bg-primary-container hover:border-on-background hover:cursor-crosshair"
+          className="hidden md:block font-mono-label text-mono-label font-bold uppercase text-on-background px-4 py-2 border-2 border-transparent transition-all duration-200 ease-in-out hover:bg-primary-container hover:text-black hover:border-on-background hover:cursor-crosshair"
         >
           Login
         </a>
@@ -49,7 +52,7 @@ const Navbar = () => {
         {/* Primary Action Button (Brutalist interaction states) */}
         <a
           href="/dashboard"
-          className="bg-surface-container-lowest text-on-background font-mono-label text-mono-label font-bold uppercase px-6 py-3 border-2 border-on-background brutalist-shadow transition-all duration-200 ease-in-out cursor-crosshair hover:bg-primary-container hover:shadow-[2px_2px_0px_0px_#1a1c1c] hover:translate-x-[2px] hover:translate-y-[2px] active:translate-x-[4px] active:translate-y-[4px] active:shadow-none"
+          className="bg-surface-container-lowest text-on-background font-mono-label text-mono-label font-bold uppercase px-6 py-3 border-2 border-on-background brutalist-shadow transition-all duration-200 ease-in-out cursor-crosshair hover:bg-primary-container hover:text-black hover:shadow-[2px_2px_0px_0px_#1a1c1c] dark:hover:shadow-[2px_2px_0px_0px_#ffffff] hover:translate-x-[2px] hover:translate-y-[2px] active:translate-x-[4px] active:translate-y-[4px] active:shadow-none"
         >
           Dashboard
         </a>

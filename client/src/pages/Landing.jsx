@@ -14,7 +14,7 @@ const Landing = () => {
             <h1 className="font-h1 text-[64px] leading-none md:text-[80px] mb-lg uppercase">
               JOB TRACKING
               <br />
-              <span className="bg-primary-container px-4 border-4 border-black inline-block brutalist-shadow-lg transform -rotate-1">
+              <span className="bg-primary-container text-black px-4 border-4 border-black inline-block brutalist-shadow-lg transform -rotate-1">
                 FOR THE BRAVE
               </span>
             </h1>
@@ -38,7 +38,7 @@ const Landing = () => {
 
           {/* Illustration / Bento Style Job Cards */}
           <div className="col-span-12 lg:col-span-5 relative h-[500px] mt-lg lg:mt-0">
-            <div className="absolute top-0 right-0 w-72 bg-white border-4 border-black p-md brutalist-shadow-lg z-30 transform rotate-3">
+            <div className="absolute top-0 right-0 w-72 bg-white text-black border-4 border-black p-md brutalist-shadow-lg z-30 transform rotate-3">
               <div className="flex justify-between items-start mb-sm">
                 <span className="font-mono-label text-mono-label bg-black text-white px-xs uppercase">
                   Pending
@@ -54,7 +54,7 @@ const Landing = () => {
               </div>
             </div>
 
-            <div className="absolute top-32 left-0 w-80 bg-primary-container border-4 border-black p-md brutalist-shadow-lg z-20 transform -rotate-2">
+            <div className="absolute top-32 left-0 w-80 bg-primary-container text-black border-4 border-black p-md brutalist-shadow-lg z-20 transform -rotate-2">
               <div className="flex justify-between items-start mb-sm">
                 <span className="font-mono-label text-mono-label bg-black text-white px-xs uppercase">
                   Interview
@@ -99,7 +99,7 @@ const Landing = () => {
               overhead during the first month of migration to Jobify.
             </p>
           </div>
-          <div className="col-span-12 md:col-span-8 bg-primary-container p-lg brutalist-shadow-lg border-4 border-black flex flex-col md:flex-row items-center gap-lg">
+          <div className="col-span-12 md:col-span-8 bg-primary-container text-black p-lg brutalist-shadow-lg border-4 border-black flex flex-col md:flex-row items-center gap-lg">
             <div className="grow">
               <h2 className="font-h2 text-h2 mb-sm uppercase">
                 READY TO EXECUTE?
@@ -109,7 +109,7 @@ const Landing = () => {
               </p>
             </div>
             <Link to="/login">
-              <button className="bg-white text-black font-mono-label text-mono-label px-xl py-lg border-4 border-black brutalist-shadow-lg hover:translate-x-2 hover:translate-y-2 hover:shadow-none transition-all uppercase font-black text-xl shrink-0">
+              <button className="bg-white text-black font-mono-label text-mono-label px-xl py-lg border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-2 hover:translate-y-2 hover:shadow-none transition-all uppercase font-black text-xl shrink-0">
                 START TRACKING
               </button>
             </Link>
@@ -121,23 +121,23 @@ const Landing = () => {
       </main>
 
       {/* Footer */}
-      <footer className="bg-white border-t-4 border-black py-xl px-container-margin">
+      <footer className="bg-surface-container-lowest text-on-background border-t-4 border-on-background py-xl px-container-margin">
         <div className="max-w-[1440px] mx-auto grid grid-cols-12 gap-gutter">
           <div className="col-span-12 md:col-span-4">
-            <div className="text-3xl font-black italic tracking-tighter text-black uppercase mb-md">
+            <div className="text-3xl font-black italic tracking-tighter text-on-background uppercase mb-md">
               JOBIFY
             </div>
-            <p className="font-mono-label text-mono-label uppercase mb-lg">
+            <p className="font-mono-label text-mono-label uppercase mb-lg text-secondary">
               Built for the relentless seeker.
             </p>
             <div className="flex gap-md">
-              <span className="material-symbols-outlined p-2 border-2 border-black brutalist-shadow">
+              <span className="material-symbols-outlined p-2 border-2 border-on-background bg-primary-container text-black brutalist-shadow">
                 share
               </span>
-              <span className="material-symbols-outlined p-2 border-2 border-black brutalist-shadow">
+              <span className="material-symbols-outlined p-2 border-2 border-on-background bg-surface-container text-on-background brutalist-shadow">
                 alternate_email
               </span>
-              <span className="material-symbols-outlined p-2 border-2 border-black brutalist-shadow">
+              <span className="material-symbols-outlined p-2 border-2 border-on-background bg-surface-container text-on-background brutalist-shadow">
                 rss_feed
               </span>
             </div>
@@ -146,16 +146,16 @@ const Landing = () => {
             <h5 className="font-mono-label font-black uppercase mb-sm">
               Navigation
             </h5>
-            <a className="hover:underline" href="#">
+            <a className="text-secondary hover:text-primary hover:underline" href="#">
               Dashboard
             </a>
-            <a className="hover:underline" href="#">
+            <a className="text-secondary hover:text-primary hover:underline" href="#">
               Job Board
             </a>
-            <a className="hover:underline" href="#">
+            <a className="text-secondary hover:text-primary hover:underline" href="#">
               Analytics
             </a>
-            <a className="hover:underline" href="#">
+            <a className="text-secondary hover:text-primary hover:underline" href="#">
               Pricing
             </a>
           </div>
@@ -163,23 +163,23 @@ const Landing = () => {
             <h5 className="font-mono-label font-black uppercase mb-sm">
               Legal
             </h5>
-            <a className="hover:underline" href="#">
+            <a className="text-secondary hover:text-primary hover:underline" href="#">
               Privacy Policy
             </a>
-            <a className="hover:underline" href="#">
+            <a className="text-secondary hover:text-primary hover:underline" href="#">
               Terms of Service
             </a>
-            <a className="hover:underline" href="#">
+            <a className="text-secondary hover:text-primary hover:underline" href="#">
               Security Protocols
             </a>
-            <a className="hover:underline" href="#">
+            <a className="text-secondary hover:text-primary hover:underline" href="#">
               API Docs
             </a>
           </div>
         </div>
-        <div className="max-w-[1440px] mx-auto mt-xl pt-lg border-t-2 border-zinc-200 flex justify-between items-center font-mono-data uppercase">
+        <div className="max-w-[1440px] mx-auto mt-xl pt-lg border-t-2 border-outline flex justify-between items-center font-mono-data uppercase text-secondary gap-sm">
           <span>© 2026 JOBIFY CORE SYSTEM</span>
-          <span>v1.0</span>
+          <span className="text-primary">v1.0</span>
         </div>
       </footer>
     </div>
