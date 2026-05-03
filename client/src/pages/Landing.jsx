@@ -146,16 +146,28 @@ const Landing = () => {
             <h5 className="font-mono-label font-black uppercase mb-sm">
               Navigation
             </h5>
-            <a className="text-secondary hover:text-primary hover:underline" href="#">
+            <a
+              className="text-secondary hover:text-primary hover:underline"
+              href="#"
+            >
               Dashboard
             </a>
-            <a className="text-secondary hover:text-primary hover:underline" href="#">
+            <a
+              className="text-secondary hover:text-primary hover:underline"
+              href="#"
+            >
               Job Board
             </a>
-            <a className="text-secondary hover:text-primary hover:underline" href="#">
+            <a
+              className="text-secondary hover:text-primary hover:underline"
+              href="#"
+            >
               Analytics
             </a>
-            <a className="text-secondary hover:text-primary hover:underline" href="#">
+            <a
+              className="text-secondary hover:text-primary hover:underline"
+              href="#"
+            >
               Pricing
             </a>
           </div>
@@ -163,16 +175,28 @@ const Landing = () => {
             <h5 className="font-mono-label font-black uppercase mb-sm">
               Legal
             </h5>
-            <a className="text-secondary hover:text-primary hover:underline" href="#">
+            <a
+              className="text-secondary hover:text-primary hover:underline"
+              href="#"
+            >
               Privacy Policy
             </a>
-            <a className="text-secondary hover:text-primary hover:underline" href="#">
+            <a
+              className="text-secondary hover:text-primary hover:underline"
+              href="#"
+            >
               Terms of Service
             </a>
-            <a className="text-secondary hover:text-primary hover:underline" href="#">
+            <a
+              className="text-secondary hover:text-primary hover:underline"
+              href="#"
+            >
               Security Protocols
             </a>
-            <a className="text-secondary hover:text-primary hover:underline" href="#">
+            <a
+              className="text-secondary hover:text-primary hover:underline"
+              href="#"
+            >
               API Docs
             </a>
           </div>

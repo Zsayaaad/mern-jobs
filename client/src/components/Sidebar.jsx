@@ -16,7 +16,7 @@ const Sidebar = () => {
           <h1 className="text-xl font-black text-on-surface font-h1 whitespace-nowrap tracking-tighter">
             JOBIFY ADMIN
           </h1>
-          <p className="font-mono-label text-[10px] uppercase text-secondary whitespace-nowrap tracking-wider">
+          <p className="font-mono-label text-[10px] uppercase text-secondary dark:text-primary whitespace-nowrap tracking-wider">
             Recruitment Hub
           </p>
         </div>
