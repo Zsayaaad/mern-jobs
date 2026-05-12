@@ -7,7 +7,7 @@ import mongoose from "mongoose";
 // routes
 import jobRouter from "./routes/jobRouter.js";
 import { errorHandlerMiddleware } from "./middleware/errorHandlerMiddleware.js";
-import { body, validationResult } from "express-validator";
+import { validateTest } from "./middleware/validationMiddleware.js";
 
 // Condition to log only in development
 if (process.env.NODE_ENV === "development") {
@@ -18,30 +18,10 @@ if (process.env.NODE_ENV === "development") {
 // Middleware to parse JSON bodies
 app.use(express.json());
 
-app.post(
-  "/api/v1/test",
-  [
-    body("name")
-      .notEmpty()
-      .withMessage("name is required")
-      .isLength({ min: 3 })
-      .withMessage("name must be at least 3 character"),
-  ],
-  (req, res, next) => {
-    const errors = validationResult(req);
-
-    if (!errors.isEmpty()) {
-      const errorMessage = errors.array().map((err) => err.msg);
-      return res.status(400).json({ errors: errorMessage });
-    }
-
-    next();
-  },
-  (req, res) => {
-    const { name } = req.body;
-    res.json({ message: `hello ${name}` });
-  },
-);
+app.post("/api/v1/test", validateTest, (req, res) => {
+  const { name } = req.body;
+  res.json({ message: `hello ${name}` });
+});
 
 app.use("/api/v1/jobs", jobRouter);
 
