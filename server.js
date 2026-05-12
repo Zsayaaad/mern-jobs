@@ -6,6 +6,8 @@ import morgan from "morgan";
 import mongoose from "mongoose";
 // routes
 import jobRouter from "./routes/jobRouter.js";
+import { errorHandlerMiddleware } from "./middleware/errorHandlerMiddleware.js";
+import { body, validationResult } from "express-validator";
 
 // Condition to log only in development
 if (process.env.NODE_ENV === "development") {
@@ -16,6 +18,31 @@ if (process.env.NODE_ENV === "development") {
 // Middleware to parse JSON bodies
 app.use(express.json());
 
+app.post(
+  "/api/v1/test",
+  [
+    body("name")
+      .notEmpty()
+      .withMessage("name is required")
+      .isLength({ min: 3 })
+      .withMessage("name must be at least 3 character"),
+  ],
+  (req, res, next) => {
+    const errors = validationResult(req);
+
+    if (!errors.isEmpty()) {
+      const errorMessage = errors.array().map((err) => err.msg);
+      return res.status(400).json({ errors: errorMessage });
+    }
+
+    next();
+  },
+  (req, res) => {
+    const { name } = req.body;
+    res.json({ message: `hello ${name}` });
+  },
+);
+
 app.use("/api/v1/jobs", jobRouter);
 
 // middleware to catch-all requests that doesn't match with the routes above
@@ -25,10 +52,7 @@ app.use((req, res) => {
 });
 
 // TRIGGERED BY OUR EXISTING ROUTES IF THERE IS A VALID REQUEST AND HAS AN ERROR
-app.use((err, req, res, next) => {
-  console.log(err);
-  res.status(500).json({ msg: "something went wrong" });
-});
+app.use(errorHandlerMiddleware);
 
 /**
  * ========================
