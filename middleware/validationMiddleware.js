@@ -1,5 +1,8 @@
-import { body, validationResult } from "express-validator";
-import { BadRequestError } from "../errors/customErrors.js";
+import { body, param, validationResult } from "express-validator";
+import { BadRequestError, NotFoundError } from "../errors/customErrors.js";
+import { JOB_STATUS, JOB_TYPE } from "../utils/constants.js";
+import mongoose from "mongoose";
+import jobModel from "../models/jobModel.js";
 
 const withValidationErrors = (validateValues) => {
   return [
@@ -9,6 +12,11 @@ const withValidationErrors = (validateValues) => {
 
       if (!errors.isEmpty()) {
         const errorMessage = errors.array().map((err) => err.msg);
+
+        if (errorMessage[0].startsWith("no job")) {
+          throw new NotFoundError(errorMessage);
+        }
+
         throw new BadRequestError(errorMessage);
       }
 
@@ -17,11 +25,22 @@ const withValidationErrors = (validateValues) => {
   ];
 };
 
-export const validateTest = withValidationErrors([
-  body("name")
-    .notEmpty()
-    .withMessage("name is required")
-    .isLength({ min: 3, max: 30 })
-    .withMessage("name must be between 3 and 30 characters long")
-    .trim(),
+export const validateJobInput = withValidationErrors([
+  body("company").notEmpty().withMessage("company is required"),
+  body("position").notEmpty().withMessage("position is required"),
+  body("jobLocation").notEmpty().withMessage("job location is required"),
+  body("jobStatus")
+    .isIn(Object.values(JOB_STATUS))
+    .withMessage("invalid job status"),
+  body("jobType").isIn(Object.values(JOB_TYPE)).withMessage("invalid job type"),
+]);
+
+export const validateIdParam = withValidationErrors([
+  param("id").custom(async (val) => {
+    const isValidId = mongoose.Types.ObjectId.isValid(val);
+    if (!isValidId) throw new BadRequestError("invalid MongoDB id");
+
+    const job = await jobModel.findById(val);
+    if (!job) throw new NotFoundError(`no job with id ${val}`);
+  }),
 ]);
