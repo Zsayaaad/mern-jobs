@@ -2,6 +2,8 @@ import jobModel from "../models/JobModel.js";
 import { StatusCodes } from "http-status-codes";
 
 export const getAllJobs = async (req, res) => {
+  console.log(req.user); // { userId: '6a05fd6b6c3ba10e10ffe559', role: 'admin' }
+
   const jobs = await jobModel.find({});
   res.status(StatusCodes.OK).json({ jobs });
 };

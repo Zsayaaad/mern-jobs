@@ -4,6 +4,7 @@ dotenv.config(); // To access .env variables
 const app = express();
 import morgan from "morgan";
 import mongoose from "mongoose";
+import cookieParser from "cookie-parser";
 
 // routes
 import jobRouter from "./routes/jobRouter.js";
@@ -11,6 +12,7 @@ import authRouter from "./routes/authRouter.js";
 
 // middleware
 import { errorHandlerMiddleware } from "./middleware/errorHandlerMiddleware.js";
+import { authenticatedUser } from "./middleware/authMiddleware.js";
 
 // Condition to log only in development
 if (process.env.NODE_ENV === "development") {
@@ -18,10 +20,11 @@ if (process.env.NODE_ENV === "development") {
   app.use(morgan("dev"));
 }
 
+app.use(cookieParser());
 // Middleware to parse JSON bodies
 app.use(express.json());
 
-app.use("/api/v1/jobs", jobRouter);
+app.use("/api/v1/jobs", authenticatedUser, jobRouter);
 app.use("/api/v1/auth", authRouter);
 
 // middleware to catch-all requests that doesn't match with the routes above

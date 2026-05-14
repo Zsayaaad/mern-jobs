@@ -2,6 +2,7 @@ import { StatusCodes } from "http-status-codes";
 import UserModel from "../models/UserModel.js";
 import { comparePassword, hashPassword } from "../utils/passwordUtils.js";
 import { UnauthenticatedError } from "../errors/customErrors.js";
+import { createJWT } from "../utils/tokenUtils.js";
 
 export const register = async (req, res) => {
   const isFirstAccount = (await UserModel.countDocuments()) === 0;
@@ -31,5 +32,14 @@ export const login = async (req, res) => {
 
   if (!isValidUser) throw new UnauthenticatedError("invalid credentials");
 
-  res.send("login");
+  const token = createJWT({ userId: user._id, role: user.role });
+
+  res.cookie("token", token, {
+    httpOnly: true, // CRITICAL: Prevents client-side JS from reading the cookie
+    secure: process.env.NODE_ENV === "production", // Ensures cookie only sent over HTTPS only in production
+    sameSite: "strict", // Protects against CSRF
+    maxAge: 1000 * 60 * 60 * 24, // 1 day in ms
+  });
+
+  res.status(StatusCodes.OK).json({ msg: "user logged in" });
 };
