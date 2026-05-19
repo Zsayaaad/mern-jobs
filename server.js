@@ -17,13 +17,17 @@ import { authenticatedUser } from "./middleware/authMiddleware.js";
 
 // Condition to log only in development
 if (process.env.NODE_ENV === "development") {
-  // This package to log info about our request that happened
+  // This package to log info about `our request that happened
   app.use(morgan("dev"));
 }
 
 app.use(cookieParser());
 // Middleware to parse JSON bodies
 app.use(express.json());
+
+app.get("/api/v1/test", (req, res) => {
+  res.json({ msg: "test route" });
+});
 
 app.use("/api/v1/jobs", authenticatedUser, jobRouter);
 app.use("/api/v1/users", authenticatedUser, userRouter);
