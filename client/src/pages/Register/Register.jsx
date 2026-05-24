@@ -1,10 +1,13 @@
 import { FormRow } from "../../components";
 import GoogleIcon from "../../assets/icons/GoogleIcon";
 import LinkedInIcon from "../../assets/icons/LinkedInIcon";
-import { Form, Link } from "react-router-dom";
+import { Form, Link, useNavigation } from "react-router-dom";
 import ThemeToggle from "../../components/ThemeToggle";
 
 const Register = () => {
+  const navigation = useNavigation();
+  console.log(navigation);
+
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-background text-on-background p-gutter">
       {/* Fixed Header */}
@@ -126,7 +129,7 @@ const Register = () => {
 
             {/* Submit Button */}
             <button
-              className="w-full py-5 bg-surface-container-lowest text-on-background border-2 border-on-background brutalist-shadow-sm active-press hover:bg-primary-container hover:text-black transition-colors mt-lg"
+              className="btn-auth-submit"
               type="submit"
             >
               <span className="text-h3 uppercase tracking-tighter">
@@ -141,11 +144,11 @@ const Register = () => {
               Or continue with
             </div>
             <div className="grid grid-cols-2 gap-md">
-              <button className="flex items-center justify-center gap-sm py-3 border-2 border-on-background bg-surface-container-lowest hover:bg-surface-container transition-colors text-mono-label uppercase text-on-background">
+              <button className="btn-auth-social">
                 <GoogleIcon />
                 Google
               </button>
-              <button className="flex items-center justify-center gap-sm py-3 border-2 border-on-background bg-surface-container-lowest hover:bg-surface-container transition-colors text-mono-label uppercase text-on-background">
+              <button className="btn-auth-social">
                 <LinkedInIcon />
                 LinkedIn
               </button>

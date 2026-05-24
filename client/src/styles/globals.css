@@ -283,6 +283,74 @@
   :where(.dark, .dark *) .benefit-card-footer {
     @apply border-white text-secondary;
   }
+
+  /* Large Form Submit Buttons (Auth Forms) */
+  .btn-auth-submit {
+    @apply w-full py-5 bg-surface-container-lowest text-on-background border-2 border-on-background hover:bg-primary-container hover:text-black transition-colors mt-lg;
+    box-shadow: 4px 4px 0px 0px rgba(0, 0, 0, 1);
+  }
+  .btn-auth-submit:active {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 1);
+  }
+  :where(.dark, .dark *) .btn-auth-submit {
+    box-shadow: 4px 4px 0px 0px #ffffff;
+  }
+  :where(.dark, .dark *) .btn-auth-submit:active {
+    box-shadow: 2px 2px 0px 0px #ffffff;
+  }
+
+  /* Social Auth Provider Buttons */
+  .btn-auth-social {
+    @apply flex items-center justify-center gap-sm py-3 border-2 border-on-background bg-surface-container-lowest hover:bg-surface-container transition-colors uppercase text-on-background;
+    font-family: var(--font-mono);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.4;
+    letter-spacing: 0.05em;
+  }
+
+  /* Bold Hero Action Buttons (Landing Page) */
+  .btn-hero-action {
+    @apply text-black px-lg py-md border-4 border-black transition-all uppercase font-bold;
+    font-family: var(--font-mono);
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.4;
+    letter-spacing: 0.05em;
+    box-shadow: 4px 4px 0px 0px rgba(0, 0, 0, 1);
+  }
+  .btn-hero-action:hover {
+    transform: translate(4px, 4px);
+    box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 1);
+  }
+  :where(.dark, .dark *) .btn-hero-action {
+    box-shadow: 4px 4px 0px 0px #ffffff;
+  }
+  :where(.dark, .dark *) .btn-hero-action:hover {
+    box-shadow: 0px 0px 0px 0px #ffffff;
+  }
+
+  /* Common Brutalist Action Buttons */
+  .btn-brutalist-action {
+    @apply text-black border-2 border-black px-lg py-md uppercase flex items-center justify-center gap-2;
+    font-family: var(--font-mono);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.4;
+    letter-spacing: 0.05em;
+    box-shadow: 4px 4px 0px 0px rgba(0, 0, 0, 1);
+  }
+  .btn-brutalist-action:active {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 1);
+  }
+  :where(.dark, .dark *) .btn-brutalist-action {
+    box-shadow: 4px 4px 0px 0px #ffffff;
+  }
+  :where(.dark, .dark *) .btn-brutalist-action:active {
+    box-shadow: 2px 2px 0px 0px #ffffff;
+  }
 }
 
 /* ---------------------------------------------------------

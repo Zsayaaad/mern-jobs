@@ -24,12 +24,12 @@ const Landing = () => {
             </p>
             <div className="flex flex-wrap gap-md">
               <Link to="/login">
-                <button className="bg-primary-container text-black font-mono-label text-mono-label px-lg py-md border-4 border-black brutalist-shadow hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all uppercase font-bold">
+                <button className="btn-hero-action bg-primary-container">
                   GET STARTED
                 </button>
               </Link>
               <Link to="dashboard">
-                <button className="bg-white text-black font-mono-label text-mono-label px-lg py-md border-4 border-black brutalist-shadow hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all uppercase font-bold">
+                <button className="btn-hero-action bg-white">
                   VIEW DEMO
                 </button>
               </Link>

@@ -86,7 +86,7 @@ const Login = () => {
 
             {/* Submit Button */}
             <button
-              className="w-full py-5 bg-surface-container-lowest text-on-background border-2 border-on-background brutalist-shadow-sm active-press hover:bg-primary-container hover:text-black transition-colors mt-lg"
+              className="btn-auth-submit"
               type="submit"
             >
               <span className="text-h3 uppercase tracking-tighter">
@@ -101,11 +101,11 @@ const Login = () => {
               Or continue with
             </div>
             <div className="grid grid-cols-2 gap-md">
-              <button className="flex items-center justify-center gap-sm py-3 border-2 border-on-background bg-surface-container-lowest hover:bg-surface-container transition-colors text-mono-label uppercase text-on-background">
+              <button className="btn-auth-social">
                 <GoogleIcon />
                 Google
               </button>
-              <button className="flex items-center justify-center gap-sm py-3 border-2 border-on-background bg-surface-container-lowest hover:bg-surface-container transition-colors text-mono-label uppercase text-on-background">
+              <button className="btn-auth-social">
                 <LinkedInIcon />
                 LinkedIn
               </button>

@@ -60,7 +60,7 @@ const Error = () => {
                     never existed in this reality.
                   </p>
                   <Link to="/dashboard">
-                    <button className="bg-primary-container text-black border-2 border-black px-xl py-md font-mono-label brutalist-shadow active-press uppercase block- flex items-center gap-2 mx-auto">
+                    <button className="btn-brutalist-action bg-primary-container px-xl mx-auto">
                       <span
                         className="material-symbols-outlined"
                         data-icon="arrow_back"
@@ -188,7 +188,7 @@ const Error = () => {
                 </p>
                 <div className="flex flex-col sm:flex-row gap-md">
                   <Link to="/addJob">
-                    <button className="bg-primary-container text-black border-2 border-black px-lg py-md font-mono-label uppercase brutalist-shadow active-press flex items-center justify-center gap-2 flex-1">
+                    <button className="btn-brutalist-action bg-primary-container flex-1">
                       <span
                         className="material-symbols-outlined"
                         data-icon="add_box"
@@ -198,7 +198,7 @@ const Error = () => {
                       Add New Job
                     </button>
                   </Link>
-                  <button className="bg-white text-black border-2 border-black px-lg py-md font-mono-label uppercase brutalist-shadow active-press flex items-center justify-center gap-2 flex-1">
+                  <button className="btn-brutalist-action bg-white flex-1">
                     <span
                       className="material-symbols-outlined"
                       data-icon="refresh"
