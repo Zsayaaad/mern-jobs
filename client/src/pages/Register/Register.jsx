@@ -1,8 +1,8 @@
-import { FormRow } from "../components";
-import GoogleIcon from "../assets/icons/GoogleIcon";
-import LinkedInIcon from "../assets/icons/LinkedInIcon";
-import { Link } from "react-router-dom";
-import ThemeToggle from "../components/ThemeToggle";
+import { FormRow } from "../../components";
+import GoogleIcon from "../../assets/icons/GoogleIcon";
+import LinkedInIcon from "../../assets/icons/LinkedInIcon";
+import { Form, Link } from "react-router-dom";
+import ThemeToggle from "../../components/ThemeToggle";
 
 const Register = () => {
   return (
@@ -34,20 +34,33 @@ const Register = () => {
           </div>
 
           <div className="mb-lg">
-            <h1 className="text-h2 text-on-background mb-xs">Create Account.</h1>
+            <h1 className="text-h2 text-on-background mb-xs">
+              Create Account.
+            </h1>
             <p className="text-body text-secondary">
               Initialize your operator profile and start tracking.
             </p>
           </div>
 
-          <form className="space-y-md">
+          <Form method="post" className="space-y-md">
             {/* Full Name Field */}
             <FormRow
               type="text"
               name="name"
-              labelText="Full Name"
+              labelText="Name"
               placeholder="JOHN DOE"
               dataIcon="person"
+              defaultValue="ziad"
+            />
+
+            {/* Last Name Field */}
+            <FormRow
+              type="text"
+              name="lastName"
+              labelText="Last Name"
+              placeholder="DOE"
+              dataIcon="person"
+              defaultValue="elsayyad"
             />
 
             {/* Email Field */}
@@ -57,6 +70,17 @@ const Register = () => {
               labelText="Email Address"
               placeholder="USER@JOBIFY.COM"
               dataIcon="mail"
+              defaultValue="z@gmail.com"
+            />
+
+            {/* Location Field */}
+            <FormRow
+              type="text"
+              name="location"
+              labelText="Location"
+              placeholder="Cairo"
+              dataIcon="location_on"
+              defaultValue="earth"
             />
 
             {/* Password Field */}
@@ -66,16 +90,18 @@ const Register = () => {
               labelText="Security Key"
               placeholder="********"
               dataIcon="lock"
+              defaultValue="secret1234"
             />
 
             {/* Confirm Password Field */}
-            <FormRow
+            {/* <FormRow
               type="password"
               name="confirmPassword"
               labelText="Confirm Key"
               placeholder="********"
               dataIcon="lock_reset"
-            />
+              defaultValue="12345"
+            /> */}
 
             {/* Terms Checkbox */}
             <div className="flex items-center gap-sm pt-xs">
@@ -107,7 +133,7 @@ const Register = () => {
                 Initialize Profile
               </span>
             </button>
-          </form>
+          </Form>
 
           {/* Social Auth */}
           <div className="mt-lg pt-lg border-t-2 border-on-background flex flex-col gap-md">

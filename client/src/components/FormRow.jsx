@@ -1,4 +1,11 @@
-const FormRow = ({ name, type, labelText, placeholder, dataIcon }) => {
+const FormRow = ({
+  name,
+  type,
+  labelText,
+  placeholder,
+  dataIcon,
+  defaultValue,
+}) => {
   return (
     <div className="space-y-xs group">
       <label
@@ -17,8 +24,10 @@ const FormRow = ({ name, type, labelText, placeholder, dataIcon }) => {
         <input
           className="w-full border-4 border-on-background p-5 pl-14 bg-surface-container-lowest text-on-background text-h3 text-lg focus:ring-0 focus:border-on-background focus:bg-primary-container/10 outline-none transition-all hover:bg-surface-container placeholder:text-secondary"
           id={name}
+          name={name}
           placeholder={placeholder}
           type={type}
+          defaultValue={defaultValue}
           required
         />
       </div>
