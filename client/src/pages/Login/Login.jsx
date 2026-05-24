@@ -3,8 +3,12 @@ import LinkedInIcon from "../../assets/icons/LinkedInIcon";
 import { FormRow } from "../../components";
 import TabSwitcher from "../../components/auth/TabSwitcher";
 import AuthHeader from "../../components/auth/AuthHeader";
+import { Form, useNavigation } from "react-router-dom";
 
 const Login = () => {
+  const navigation = useNavigation();
+  const isSubmitting = navigation.state === "submitting";
+
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-background text-on-background p-gutter">
       <AuthHeader />
@@ -21,7 +25,7 @@ const Login = () => {
             </p>
           </div>
 
-          <form className="space-y-md">
+          <Form method="post" className="space-y-md">
             {/* Email Field */}
             <FormRow
               type="email"
@@ -29,6 +33,7 @@ const Login = () => {
               labelText="Email Address"
               placeholder="USER@JOBIFY.COM"
               dataIcon="mail"
+              defaultValue="z@gmail.com"
             />
 
             {/* Password Field */}
@@ -39,6 +44,7 @@ const Login = () => {
                 labelText="Password"
                 placeholder="********"
                 dataIcon="lock"
+                defaultValue="secret1234"
               />
               <div className="flex justify-end">
                 <a
@@ -67,9 +73,17 @@ const Login = () => {
 
             {/* Submit Button */}
             <button className="btn-auth-submit" type="submit">
-              <span className="text-h3 uppercase tracking-tighter">Submit</span>
+              {isSubmitting ? (
+                <span className="text-h3 uppercase tracking-tighter">
+                  Submitting...
+                </span>
+              ) : (
+                <span className="text-h3 uppercase tracking-tighter">
+                  Submit
+                </span>
+              )}
             </button>
-          </form>
+          </Form>
 
           {/* Social Auth */}
           <div className="mt-lg pt-lg border-t-2 border-on-background flex flex-col gap-md">
