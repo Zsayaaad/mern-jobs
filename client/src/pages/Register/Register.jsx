@@ -1,40 +1,22 @@
 import { FormRow } from "../../components";
 import GoogleIcon from "../../assets/icons/GoogleIcon";
 import LinkedInIcon from "../../assets/icons/LinkedInIcon";
-import { Form, Link, useNavigation } from "react-router-dom";
-import ThemeToggle from "../../components/ThemeToggle";
+import { Form, useNavigation } from "react-router-dom";
+import TabSwitcher from "../../components/auth/TabSwitcher";
+import AuthHeader from "../../components/auth/AuthHeader";
 
 const Register = () => {
   const navigation = useNavigation();
-  console.log(navigation);
+  const isSubmitting = navigation.state === "submitting";
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-background text-on-background p-gutter">
-      {/* Fixed Header */}
-      <header className="fixed top-0 z-50 flex justify-between items-center px-8 py-4 w-full bg-surface-container-lowest border-b-4 border-on-background">
-        <Link to="/">
-          <div className="text-3xl font-black italic tracking-tighter text-on-background font-heading">
-            JOBIFY
-          </div>
-        </Link>
-        <ThemeToggle />
-      </header>
+      <AuthHeader />
 
       <main className="w-full max-w-[480px] mt-xl">
         {/* Auth Card */}
         <div className="bg-surface-container-lowest border-4 border-on-background brutalist-shadow p-lg">
-          {/* Tab Switcher */}
-          <div className="flex border-b-4 border-on-background mb-lg -mx-lg -mt-lg">
-            <Link
-              className="flex-1 py-4 text-mono-label uppercase bg-surface-container-lowest text-on-background hover:bg-surface-container transition-colors tracking-widest font-bold text-center"
-              to="/login"
-            >
-              Login
-            </Link>
-            <button className="flex-1 py-4 text-mono-label uppercase bg-primary-container text-black border-l-4 border-on-background tracking-widest font-bold">
-              Register
-            </button>
-          </div>
+          <TabSwitcher activeTab="register" />
 
           <div className="mb-lg">
             <h1 className="text-h2 text-on-background mb-xs">
@@ -128,13 +110,16 @@ const Register = () => {
             </div>
 
             {/* Submit Button */}
-            <button
-              className="btn-auth-submit"
-              type="submit"
-            >
-              <span className="text-h3 uppercase tracking-tighter">
-                Initialize Profile
-              </span>
+            <button className="btn-auth-submit" type="submit">
+              {isSubmitting ? (
+                <span className="text-h3 uppercase tracking-tighter">
+                  Submitting...
+                </span>
+              ) : (
+                <span className="text-h3 uppercase tracking-tighter">
+                  Initialize Profile
+                </span>
+              )}
             </button>
           </Form>
 

@@ -13,7 +13,7 @@ import {
   Admin,
 } from "./pages";
 
-import { registerAction } from "./pages/Register/registerAction";
+import { registerAction } from "./pages/Register/action";
 
 const router = createBrowserRouter([
   {
