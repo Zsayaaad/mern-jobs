@@ -1,13 +1,12 @@
 import GoogleIcon from "../../assets/icons/GoogleIcon";
 import LinkedInIcon from "../../assets/icons/LinkedInIcon";
-import { FormRow } from "../../components";
-import TabSwitcher from "../../components/auth/TabSwitcher";
-import AuthHeader from "../../components/auth/AuthHeader";
+import { AuthHeader, FormRow, TabSwitcher } from "../../components";
 import { Form, useNavigation } from "react-router-dom";
 
 const Login = () => {
   const navigation = useNavigation();
   const isSubmitting = navigation.state === "submitting";
+  // const errors = useActionData();
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-background text-on-background p-gutter">
@@ -26,6 +25,8 @@ const Login = () => {
           </div>
 
           <Form method="post" className="space-y-md">
+            {/* {errors?.msg && <p style={{ color: "red" }}>{errors.msg}</p>} */}
+
             {/* Email Field */}
             <FormRow
               type="email"

@@ -1,13 +1,15 @@
-import { Link, Outlet } from "react-router-dom";
-import { Sidebar } from "../components";
+import { Link, Outlet, useLoaderData } from "react-router-dom";
 import { useState } from "react";
-import { DashboardContext } from "../context/DashboardContext";
-import LogoutContainer from "../components/LogoutContainer";
-import ThemeToggle from "../components/ThemeToggle";
+import { DashboardContext } from "../../context/DashboardContext";
+import { LogoutContainer, Sidebar, ThemeToggle } from "../../components";
+import { useNavigate } from "react-router-dom";
+import customFetch from "../../utils/customFetch";
+import { toast } from "react-toastify";
 
 const DashboardLayout = () => {
-  // temp user
-  const user = { name: "ziad" };
+  const { user } = useLoaderData();
+  const navigate = useNavigate();
+
   // State for Desktop Sidebar Collapse
   const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false);
   // State for Mobile Sidebar Drawer
@@ -30,7 +32,9 @@ const DashboardLayout = () => {
   };
 
   const logoutUser = async () => {
-    console.log("logout user");
+    navigate("/");
+    await customFetch.get("/auth/logout");
+    toast.success("Logout successful");
   };
 
   return (
@@ -74,16 +78,8 @@ const DashboardLayout = () => {
 
           <div className="flex items-center gap-2 lg:gap-6">
             <div className="flex items-center gap-1 lg:gap-4">
-              {/* <button className="p-2 hover:bg-surface-container transition-colors active:translate-y-0.5">
-                <span className="material-symbols-outlined">dark_mode</span>
-              </button> */}
               <ThemeToggle />
-              {/* <button className="p-2 hover:bg-surface-container transition-colors active:translate-y-0.5"> */}
-              {/* <span className="material-symbols-outlined">
-                  account_circle
-                </span> */}
               <LogoutContainer />
-              {/* </button> */}
             </div>
           </div>
         </header>

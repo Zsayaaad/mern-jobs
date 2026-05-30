@@ -15,6 +15,7 @@ import {
 
 import { registerAction } from "./pages/Register/action";
 import { loginAction } from "./pages/Login/action";
+import { dashboardLoader } from "./pages/Dashboard/loader";
 
 const router = createBrowserRouter([
   {
@@ -39,6 +40,7 @@ const router = createBrowserRouter([
       {
         path: "dashboard",
         element: <DashboardLayout />,
+        loader: dashboardLoader,
         children: [
           {
             index: true,
