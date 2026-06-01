@@ -91,7 +91,7 @@ const DashboardLayout = () => {
           className={`transition-all duration-300 ease-in-out ${isSidebarCollapsed ? "lg:ml-20" : "lg:ml-72"}`}
         >
           <div className="p-6 lg:p-8">
-            <Outlet />
+            <Outlet context={{ user }} />
           </div>
         </div>
       </div>
