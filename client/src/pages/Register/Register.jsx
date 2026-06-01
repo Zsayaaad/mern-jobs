@@ -78,16 +78,6 @@ const Register = () => {
               defaultValue="secret1234"
             />
 
-            {/* Confirm Password Field */}
-            {/* <FormRow
-              type="password"
-              name="confirmPassword"
-              labelText="Confirm Key"
-              placeholder="********"
-              dataIcon="lock_reset"
-              defaultValue="12345"
-            /> */}
-
             {/* Terms Checkbox */}
             <div className="flex items-center gap-sm pt-xs">
               <input

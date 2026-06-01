@@ -1,14 +1,14 @@
 export const JOB_STATUS = {
-  ACTIVE: "active",
-  CLOSED: "closed",
-  URGENT: "urgent hiring",
-  PENDING: "pending",
+  ACTIVE: "Active",
+  CLOSED: "Closed",
+  URGENT: "Urgent",
+  PENDING: "Pending",
 };
 
 export const JOB_TYPE = {
-  FULL_TIME: "full-time",
-  PART_TIME: "part-time",
-  INTERNSHIP: "internship",
+  FULL_TIME: "Full-time",
+  PART_TIME: "Part-time",
+  INTERNSHIP: "Internship",
 };
 
 export const JOB_SORT_BY = {
