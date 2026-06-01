@@ -2,7 +2,7 @@ import { useDashboardContext } from "../context/DashboardContext";
 import NavLinks from "./NavLinks";
 
 const Sidebar = () => {
-  const { isSidebarCollapsed, isMobileSidebarOpen, toggleSidebar } =
+  const { isSidebarCollapsed, isMobileSidebarOpen, toggleSidebar, logoutUser } =
     useDashboardContext();
 
   return (
@@ -14,7 +14,7 @@ const Sidebar = () => {
       <div className="p-6 border-b-4 border-on-surface flex items-center justify-between overflow-hidden shrink-0 h-28">
         <div className={isSidebarCollapsed ? "lg:hidden" : "block"}>
           <h1 className="text-xl font-black text-on-surface font-h1 whitespace-nowrap tracking-tighter">
-            JOBIFY ADMIN
+            JOBLY ADMIN
           </h1>
           <p className="font-mono-label text-[10px] uppercase text-secondary dark:text-primary whitespace-nowrap tracking-wider">
             Recruitment Hub
@@ -33,17 +33,17 @@ const Sidebar = () => {
       <NavLinks />
 
       <div className="p-3 mt-auto border-t-4 border-on-surface bg-surface">
-        <button
+        {/* <button
           className={`w-full bg-black text-white dark:bg-primary dark:text-black py-4 border-2 border-on-surface  font-mono-label uppercase font-bold mb-4 flex items-center justify-center gap-2 transition-all brutalist-hover brutalist-active`}
         >
           <span className="material-symbols-outlined">add</span>
           <span className={isSidebarCollapsed ? "lg:hidden" : "block"}>
             Post Job
           </span>
-        </button>
+        </button> */}
         <a
-          href="/logout"
           className="flex items-center gap-4 px-4 py-3 text-on-surface hover:bg-surface-variant font-mono-label uppercase font-bold transition-transform group"
+          onClick={logoutUser}
         >
           <span className="material-symbols-outlined shrink-0">logout</span>
           <span className={isSidebarCollapsed ? "lg:hidden" : "block"}>

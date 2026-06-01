@@ -1,3 +1,5 @@
+export { default as AuthHeader } from "./auth/AuthHeader";
+export { default as TabSwitcher } from "./auth/TabSwitcher";
 export { default as FormRow } from "./FormRow";
 export { default as BenefitsSection } from "./BenefitsSection";
 export { default as FeaturesSection } from "./FeaturesSection";
@@ -6,5 +8,5 @@ export { default as Sidebar } from "./Sidebar";
 export { default as ThemeToggle } from "./ThemeToggle";
 export { default as LogoutContainer } from "./LogoutContainer";
 export { default as FormRowSelect } from "./FormRowSelect";
-export { default as AuthHeader } from "./auth/AuthHeader";
-export { default as TabSwitcher } from "./auth/TabSwitcher";
+export { default as SearchFilterContainer } from "./SearchFilterContainer";
+export { default as JobsContainer } from "./JobsContainer";

@@ -7,8 +7,6 @@ const AddJob = () => {
   const navigation = useNavigation();
   const isSubmitting = navigation.state === "submitting";
 
-  console.log(isSubmitting);
-
   return (
     <main className="p-lg md:p-xl grow flex justify-center bg-background min-h-screen">
       <div className="w-full max-w-2xl">
@@ -77,7 +75,7 @@ const AddJob = () => {
               className="btn-brutalist-action  bg-primary-container w-full py-gutter text-2xl font-black sm:flex-2 "
               disabled={isSubmitting}
             >
-              {isSubmitting ? "Submitting.." : "Post New Job"}
+              {isSubmitting ? "Submitting.." : "Submit Job"}
             </button>
           </div>
         </Form>

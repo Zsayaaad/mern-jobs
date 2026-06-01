@@ -71,7 +71,7 @@ const DashboardLayout = () => {
             </button>
             <Link to="/">
               <span className="font-h1 text-2xl lg:text-3xl font-black italic tracking-tighter text-on-surface">
-                JOBIFY
+                JOBLY
               </span>
             </Link>
           </div>

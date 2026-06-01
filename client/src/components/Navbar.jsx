@@ -8,7 +8,7 @@ const Navbar = () => {
         href="/"
         className="text-3xl font-black italic text-on-background font-mono-data tracking-tighter"
       >
-        JOBIFY
+        JOBLY
       </a>
 
       {/* Navigation Links */}
